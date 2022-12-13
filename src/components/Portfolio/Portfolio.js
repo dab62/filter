@@ -9,11 +9,6 @@ function Portfolio({ projectList }) {
   const [selected, setSelected] = useState('All');
 
   const filter = (event) => {
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach((item) => item.classList.remove('active'));
-    
-    event.target.classList.add('active');
-
     const select = event.target.textContent;
     
     if (select === 'All') {
@@ -23,9 +18,7 @@ function Portfolio({ projectList }) {
         projectList.filter(item => item.category === select)
       );
     }
-
     setSelected(select);
-    console.log(buttons);
   }
 
   return (
