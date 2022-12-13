@@ -8,13 +8,13 @@ function Portfolio({ projectList }) {
   const [filteredListProjects, setFilteredListProjects] = useState(projectList);
   const [selected, setSelected] = useState('All');
 
-  const filter = (w) => {
+  const filter = (event) => {
     const buttons = document.querySelectorAll('button');
     buttons.forEach((item) => item.classList.remove('active'));
     
-    w.target.classList.add('active');
+    event.target.classList.add('active');
 
-    const select = w.target.textContent;
+    const select = event.target.textContent;
     
     if (select === 'All') {
       setFilteredListProjects(projectList);
